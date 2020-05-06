@@ -350,5 +350,6 @@ unset bash_prompt
 
 
 ### EOF ###
+
 then do nano /root/.bashrc and paste the same text into the file.
 once done save the file and exit the terminal and re-open it.
