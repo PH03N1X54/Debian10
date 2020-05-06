@@ -1,0 +1,18 @@
+credit to AverageLinuxUser for creating the original guide and post for the following document... here is the original link to his site https://averagelinuxuser.com/debian-10-after-install/
+
+Fix The CD-ROM error ( only do this if you installed Debian from a DVD or get this error when updating, open the Software and Updates application and in the Other Software tab, disable CDROM repository, now open terminal and type the following commands, sudo apt update, sudo apt upgrade... you should no longer recieve the error)
+Use The Fastest Repository Mirror (You can switch to the fastest repository mirror to download the updates from a server that is physically closer to your location. To that end, open the Software and Updates application → Debian Software → Download from → Other → Selected the best server: And Debian will automatically find the fastest server in your location. Select it and close without reloading the repositories... Now open terminal and type sudo apt update)
+Fix The Error This Repository Does Not Have A Release File ( It means your local mirror doesn’t have a security repository. To fix this, open the sources list: sudo nano /etc/apt/sources.list And replace the address in the lines containing buster/updates with the default security repository: http://security.debian.org/debian-security/: Returning the default security repository of Debian 10 Press Ctrl+O and Enter to save the changes and Ctrl+x and Enter to exit Nano. Now type sudo apt update to make sure the error is gone)
+Add Contrib And Non-Free Repositories ( To add contrib and non-free repositories, activate them in Software and Updates application: Adding contrib and non-free repositories in Debian 10 And reload the information about the available repositories.)
+Switch To Xorg( Open terminal and type ps -e | grep tty it should return with xwayland, Log out and press the settings cog next to Sign in and select SystemX11 and log in)
+Install Another Web Browser In This Case Chromium (open terminal and type sudo apt install chromium)
+Get Your Minimise Button Back If On Gnome ( open tweaks and click windows titlebars and enable minimise and maximise or whatever you want.)
+Install Synaptic ( To get probably the best GUI Package Manager available open terminal and type sudo apt install synaptic.)
+Install Build Essential ( To get programs that will help out down the road type this in terminal sudo apt install build-essential dkms linux-headers-$(uname -r) )
+Install Restricted-Extras ( To get programs that you can get straight away in Ubuntu type this in terminal sudo apt install ttf-mscorefonts-installer rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi)
+Install VLC Media Player ( Type this in terminal sudo apt install vlc)
+Enable The X-KILL Shortcut ( To enable this shortcut, open the Settings → Devices → Keyboard → Add new shortcut. Type xkill in the name and command and set Ctrl+Alt+Esc as a shortcut.)
+Install A Better Terminal ( Type this sudo apt install terminator)
+Set A Terminal Shortcut ( add a new shortcut in Settings → Devices → Keyboard → Add new shortcut. Name it Open Terminal and type terminator as a command. To set the shortcut, press Ctrl+Alt+T.)
+Enable GNOME extensions ( first type sudo apt install chrome-gnome-shell Then, go to the GNOME Extension website and you will be offered to install the GNOME Shell integration add-on. Do that.
+Enable Snap And Flatpak ( To enable Snap and Flatpak support in Debian 10, open the Software Center and search for Gnome Software. Select it and scroll down. You will find Snap and Flatpak in the addons bar. Enable either of them or both then restart the software center)
